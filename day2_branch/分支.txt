@@ -8,3 +8,5 @@
 (6)git log		->查看提交的历史记录
    git log –-pretty=oneline	->美化提交历史记录
    git log –pretty=oneline --abbrev-commit	->美化后版本号缩写
+(7)git push origin 分支名	->把修改从本地分支推送到远程分支
+   git push --set-upstream origin master	->设置本地的master和远程仓库的master映射
