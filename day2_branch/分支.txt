@@ -4,3 +4,7 @@
 (3)git add		->文件名 把指定文件从工作区添加到暂存区 
    git add .		->把所有修改的文件从工作区添加暂存区
    注：这个点代表修改的所有文件
+(5)git commit -m ‘提交的描述’	->把修改的文件从暂存区提交到本地分支
+(6)git log		->查看提交的历史记录
+   git log –-pretty=oneline	->美化提交历史记录
+   git log –pretty=oneline --abbrev-commit	->美化后版本号缩写
