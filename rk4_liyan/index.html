@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./swiper/css/swiper-3.4.2.min.css">
+    <link rel="stylesheet" href="./font/iconfont.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <script>
+        document.documentElement.style.fontSize = window.innerWidth / 750 * 100 + 'px';
+    </script>
+</head>
+
+<body>
+    <div class="wrap">
+        <header>
+            <ul>
+                <li>精选</li>
+                <li>爱看</li>
+                <li>电视剧</li>
+                <li>电影</li>
+                <li>综艺</li>
+                <li>少儿</li>
+            </ul>
+            <span class="iconfont icon-gengduo-2"></span>
+        </header>
+        <section>
+            <div class="search">
+                <input type="text" placeholder="斗罗大陆">
+                <span class="iconfont icon-fangdajing"></span>
+                <span class="iconfont icon-fenxiang3"></span>
+                <span class="iconfont icon-shizhong1"></span>
+            </div>
+            <div class="banner swiper-container">
+                <ul class="swiper-wrapper">
+                    <li class="swiper-slide"><img src="image/ban.png" alt=""></li>
+                    <li class="swiper-slide"><img src="image/ban.png" alt=""></li>
+                    <li class="swiper-slide"><img src="image/ban.png" alt=""></li>
+                </ul>
+            </div>
+            <h4>重磅热播</h4>
+            <div class="content">
+
+                <!-- <dl>
+                    <dt><img src="image/pic1.png" alt=""></dt>
+                    <dd>
+                        <h5>南方有乔木</h5>
+                        <p>南乔or安宁？ 陈伟霆难抉择</p>
+                    </dd>
+                </dl> -->
+            </div>
+        </section>
+        <footer>
+            <ul>
+                <li><span class="iconfont icon-shouye"></span><span>首页</span></li>
+                <li><span class="iconfont icon-eyeopen"></span><span>热点</span></li>
+                <li><span class="iconfont icon-gouwuche"></span><span>VIP会员</span></li>
+                <li><span class="iconfont icon-youku"></span><span>doki</span></li>
+                <li><span class="iconfont icon-icongerenzhongxin-01"></span><span>个人中心</span></li>
+            </ul>
+        </footer>
+    </div>
+</body>
+<script src="./swiper/js/swiper-3.4.2.min.js"></script>
+<script src="./zepto/zepto.js"></script>
+<script>
+    var content = $('.content');
+    var str = '';
+    $.ajax({
+        url: 'data/data.json',
+        success: function(data) {
+            data.forEach(function(ele, i) {
+                str += `
+                <dl>
+                    <dt><img src="${ele.src}" alt=""></dt>
+                    <dd>
+                        <h5>${ele.tit}</h5>
+                        <p>${ele.con}</p>
+                    </dd>
+                </dl>
+            `;
+                content.append(str);
+            });
+
+        }
+    });
+    new Swiper('.swiper-container', {
+        autoplaa: 1000
+    })
+</script>
+
+</html>

@@ -1,0 +1,110 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+body,
+html {
+    font-size: 0.35rem;
+}
+
+body,
+html,
+.wrap {
+    width: 100%;
+    height: 100%;
+}
+
+.wrap {
+    display: flex;
+    flex-direction: column;
+    header {
+        flex-shrink: 0;
+        height: 1rem;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        ul {
+            flex: 8;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            li {
+                text-align: center;
+            }
+            .active {
+                color: orangered;
+                border-bottom: 1px solid orangered;
+            }
+        }
+        span {
+            flex: 2;
+            text-align: center;
+        }
+    }
+    section {
+        flex: 1;
+        height: 100%;
+        overflow: hidden;
+        overflow-y: scroll;
+        nav {
+            width: 100%;
+            display: flex;
+            input {
+                flex: 7;
+            }
+            span {
+                flex: 1;
+            }
+        }
+        .banner {
+            width: 100%;
+            overflow: hidden;
+            ul {
+                width: 300%;
+                display: flex;
+                li {
+                    width: 100%;
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            dl {
+                width: 49%;
+                height: 3rem;
+                margin-right: 1px;
+                dt {
+                    width: 100%;
+                    img {
+                        width: 100%;
+                    }
+                }
+                dd {
+                    p {
+                        color: #ccc;
+                    }
+                }
+            }
+        }
+    }
+    footer {
+        flex-shrink: 0;
+        height: 1rem;
+        ul {
+            display: flex;
+            align-items: center;
+            li {
+                width: 20%;
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+            }
+        }
+    }
+}
